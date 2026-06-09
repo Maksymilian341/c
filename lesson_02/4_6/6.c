@@ -13,6 +13,7 @@ int suma(int a){
 int main()
 {   
     long long a;
+    int count = 0;
     printf("Podaj liczbę a: \n");
     scanf("%lld",&a);
 
@@ -20,9 +21,13 @@ int main()
         for(int j = 0; j <= a; j++){
             if(i > j && i != j && suma(i) == j && suma(j) == i){
                 printf("liczby %d i %d są zaprzyjaźnione.\n",i,j);
+                count++;
             }
         }
     }
- 
+    
+    if( count == 0){
+        printf("W przedziale od 1 do %lld nie ma liczb zaprzyjaźnionych. \n",a);
+    }
     return 0;
 }
